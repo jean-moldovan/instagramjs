@@ -1,0 +1,20 @@
+{
+  "name": "instagramjs",
+  "version": "0.0.1",
+  "description": "Javascript wrapper around Instagram API",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "javascript",
+    "instagram",
+    "sdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
