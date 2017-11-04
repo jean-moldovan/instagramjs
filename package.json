@@ -1,20 +1,40 @@
 {
   "name": "instagramjs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Javascript wrapper around Instagram API",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "lint": "standard",
+    "test": "npm run lint && jasmine --config=test/jasmine.json"
   },
   "keywords": [
     "javascript",
     "instagram",
     "sdk"
   ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jean-moldovan/instagramjs"
+  },
+  "author": "Eugene Granik",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2"
+  },
   "devDependencies": {
+    "jasmine": "^2.8.0",
+    "nock": "^9.0.27",
     "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "jasmine",
+      "describe",
+      "it",
+      "expect",
+      "beforeEach",
+      "fit",
+      "xit"
+    ]
   }
 }

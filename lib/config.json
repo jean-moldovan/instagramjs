@@ -1,0 +1,5 @@
+{
+  "baseURL": "https://api.instagram.com/v1",
+  "fullResponse": false,
+  "timeout": 0
+}
