@@ -1,1 +1,1 @@
-module.exports = require('./lib/instagram')
+module.exports = require('./lib/Instagram')
