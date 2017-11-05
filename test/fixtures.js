@@ -8,6 +8,11 @@ const media = {
   images: {}
 }
 
+const comment = {
+  id: 'id',
+  text: 'Uh, shame I don\'t speak French'
+}
+
 module.exports = {
   user,
   userMedia: [media],
@@ -17,5 +22,7 @@ module.exports = {
     outgoing_status: 'none',
     incoming_status: 'none'
   },
-  media
+  media,
+  mediaComments: [comment],
+  mediaComment: comment
 }

@@ -50,4 +50,30 @@ describe('media', () => {
       done()
     })
   })
+
+  describe('comments', () => {
+    it('should read by id', (done) => {
+      nock(baseURL)
+        .get('/media/id/comments/cid')
+        .query(true)
+        .reply(200, { data: fixtures.mediaComment })
+
+      access.media('id').comments('cid').get().then(res => {
+        expect(res).toEqual(fixtures.mediaComment)
+        done()
+      })
+    })
+
+    it('should delete by id', (done) => {
+      nock(baseURL)
+        .delete('/media/id/comments/cid')
+        .query(true)
+        .reply(200, { data: null })
+
+      access.media('id').comments('cid').delete().then(res => {
+        expect(res).toBe(null)
+        done()
+      })
+    })
+  })
 })
