@@ -24,5 +24,9 @@ module.exports = {
   },
   media,
   mediaComments: [comment],
-  mediaComment: comment
+  mediaComment: comment,
+  mediaLikes: [{
+    id: 'id',
+    username: 'John Doe'
+  }]
 }

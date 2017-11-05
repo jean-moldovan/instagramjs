@@ -51,14 +51,14 @@ describe('media', () => {
     })
   })
 
-  describe('comments', () => {
+  describe('comment', () => {
     it('should read by id', (done) => {
       nock(baseURL)
         .get('/media/id/comments/cid')
         .query(true)
         .reply(200, { data: fixtures.mediaComment })
 
-      access.media('id').comments('cid').get().then(res => {
+      access.media('id').comment('cid').get().then(res => {
         expect(res).toEqual(fixtures.mediaComment)
         done()
       })
@@ -70,8 +70,46 @@ describe('media', () => {
         .query(true)
         .reply(200, { data: null })
 
-      access.media('id').comments('cid').delete().then(res => {
+      access.media('id').comment('cid').delete().then(res => {
         expect(res).toBe(null)
+        done()
+      })
+    })
+  })
+
+  describe('like', () => {
+    it('should read', (done) => {
+      nock(baseURL)
+        .get('/media/id/likes')
+        .query(true)
+        .reply(200, { data: fixtures.mediaLikes })
+
+      access.media('id').like().get().then(res => {
+        expect(res).toEqual(fixtures.mediaLikes)
+        done()
+      })
+    })
+
+    it('should post', (done) => {
+      nock(baseURL)
+        .post('/media/id/likes')
+        .query(true)
+        .reply(200, { data: null })
+
+      access.media('id').like().post().then(res => {
+        expect(res).toEqual(null)
+        done()
+      })
+    })
+
+    it('should delete', (done) => {
+      nock(baseURL)
+        .delete('/media/id/likes')
+        .query(true)
+        .reply(200, { data: null })
+
+      access.media('id').like().delete().then(res => {
+        expect(res).toEqual(null)
         done()
       })
     })
