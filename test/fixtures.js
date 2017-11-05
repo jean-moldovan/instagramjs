@@ -3,16 +3,19 @@ const user = {
   name: 'John Doe'
 }
 
+const media = {
+  id: 'id',
+  images: {}
+}
+
 module.exports = {
   user,
-  userMedia: [{
-    id: 'id',
-    images: {}
-  }],
+  userMedia: [media],
   userFollows: [user],
   userFollowedBy: [user],
   userRelationship: {
     outgoing_status: 'none',
     incoming_status: 'none'
-  }
+  },
+  media
 }

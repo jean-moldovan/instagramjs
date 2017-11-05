@@ -10,7 +10,7 @@ describe('user', () => {
     access = new Instagram('token', { baseURL })
   })
 
-  it('should read user by id', (done) => {
+  it('should read by id', (done) => {
     nock(baseURL)
       .get('/users/id')
       .query(true)
@@ -22,7 +22,7 @@ describe('user', () => {
     })
   })
 
-  it('should search user', (done) => {
+  it('should search', (done) => {
     nock(baseURL)
       .get('/users/search')
       .query({
@@ -38,7 +38,7 @@ describe('user', () => {
   })
 
   describe('media', () => {
-    it('should read user media (recent by default)', (done) => {
+    it('should read recent by default', (done) => {
       nock(baseURL)
         .get('/users/id/media/recent')
         .query(true)
@@ -50,7 +50,7 @@ describe('user', () => {
       })
     })
 
-    it('should read specific media type', (done) => {
+    it('should read specified type', (done) => {
       nock(baseURL)
         .get('/users/id/media/type')
         .query(true)
@@ -62,7 +62,7 @@ describe('user', () => {
       })
     })
 
-    it('should allow counter param for user media', (done) => {
+    it('should allow counter param', (done) => {
       nock(baseURL)
         .get('/users/id/media/recent')
         .query({
@@ -79,31 +79,7 @@ describe('user', () => {
   })
 
   describe('relationship', () => {
-    it('should read user follows', (done) => {
-      nock(baseURL)
-        .get('/users/id/follows')
-        .query(true)
-        .reply(200, { data: fixtures.userFollows })
-
-      access.user('id').follows().get().then(res => {
-        expect(res).toEqual(fixtures.userFollows)
-        done()
-      })
-    })
-
-    it('should read user followed by', (done) => {
-      nock(baseURL)
-        .get('/users/id/followed-by')
-        .query(true)
-        .reply(200, { data: fixtures.userFollowedBy })
-
-      access.user('id').followedBy().get().then(res => {
-        expect(res).toEqual(fixtures.userFollowedBy)
-        done()
-      })
-    })
-
-    it('should read relationship', (done) => {
+    it('should read', (done) => {
       nock(baseURL)
         .get('/users/id/relationship')
         .query(true)
@@ -115,7 +91,7 @@ describe('user', () => {
       })
     })
 
-    it('should modify relationship', (done) => {
+    it('should modify', (done) => {
       nock(baseURL)
         .post('/users/id/relationship')
         .query({
@@ -126,6 +102,30 @@ describe('user', () => {
 
       access.user('id').relationship().post({ action: 'unfollow' }).then(res => {
         expect(res).toEqual(fixtures.userRelationship)
+        done()
+      })
+    })
+
+    it('should read \'follows\'', (done) => {
+      nock(baseURL)
+      .get('/users/id/follows')
+      .query(true)
+      .reply(200, { data: fixtures.userFollows })
+
+      access.user('id').follows().get().then(res => {
+        expect(res).toEqual(fixtures.userFollows)
+        done()
+      })
+    })
+
+    it('should read \'followed by\'', (done) => {
+      nock(baseURL)
+        .get('/users/id/followed-by')
+        .query(true)
+        .reply(200, { data: fixtures.userFollowedBy })
+
+      access.user('id').followedBy().get().then(res => {
+        expect(res).toEqual(fixtures.userFollowedBy)
         done()
       })
     })
