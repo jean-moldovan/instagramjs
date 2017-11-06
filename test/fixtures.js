@@ -13,6 +13,10 @@ const comment = {
   text: 'Uh, shame I don\'t speak French'
 }
 
+const tag = {
+  name: 'sdk'
+}
+
 module.exports = {
   user,
   userMedia: [media],
@@ -28,5 +32,7 @@ module.exports = {
   mediaLikes: [{
     id: 'id',
     username: 'John Doe'
-  }]
+  }],
+  tag,
+  tagMedia: [media]
 }
