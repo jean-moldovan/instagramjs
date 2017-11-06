@@ -17,6 +17,11 @@ const tag = {
   name: 'sdk'
 }
 
+const location = {
+  id: 'id',
+  name: 'Europe/Minsk'
+}
+
 module.exports = {
   user,
   userMedia: [media],
@@ -34,5 +39,7 @@ module.exports = {
     username: 'John Doe'
   }],
   tag,
-  tagMedia: [media]
+  tagMedia: [media],
+  location,
+  locationMedia: [media]
 }
