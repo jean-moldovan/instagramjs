@@ -39,5 +39,20 @@ describe('Instagram', () => {
       const instagram = new Instagram('token')
       expect(instagram.user).toEqual(jasmine.any(Function))
     })
+
+    it('should have media resource', () => {
+      const instagram = new Instagram('token')
+      expect(instagram.media).toEqual(jasmine.any(Function))
+    })
+
+    it('should have tag resource', () => {
+      const instagram = new Instagram('token')
+      expect(instagram.tag).toEqual(jasmine.any(Function))
+    })
+
+    it('should have location resource', () => {
+      const instagram = new Instagram('token')
+      expect(instagram.location).toEqual(jasmine.any(Function))
+    })
   })
 })
