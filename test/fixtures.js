@@ -27,6 +27,7 @@ module.exports = {
   userMedia: [media],
   userFollows: [user],
   userFollowedBy: [user],
+  userRequestedBy: [user],
   userRelationship: {
     outgoing_status: 'none',
     incoming_status: 'none'

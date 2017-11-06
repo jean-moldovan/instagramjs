@@ -129,5 +129,17 @@ describe('user', () => {
         done()
       })
     })
+
+    it('should read \'requested by\'', (done) => {
+      nock(baseURL)
+        .get('/users/id/requested-by')
+        .query(true)
+        .reply(200, { data: fixtures.userRequestedBy })
+
+      access.user('id').requestedBy().get().then(res => {
+        expect(res).toEqual(fixtures.userRequestedBy)
+        done()
+      })
+    })
   })
 })
