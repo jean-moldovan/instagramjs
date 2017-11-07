@@ -31,7 +31,7 @@ describe('tag', () => {
       })
       .reply(200, { data: fixtures.tag })
 
-    access.tag().search('query').then(res => {
+    access.tag().search({q: 'query'}).then(res => {
       expect(res).toEqual(fixtures.tag)
       done()
     })

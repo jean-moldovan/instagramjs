@@ -27,11 +27,12 @@ describe('user', () => {
       .get('/users/search')
       .query({
         access_token: 'token',
-        q: 'aklotos'
+        q: 'aklotos',
+        count: 1
       })
       .reply(200, { data: fixtures.user })
 
-    access.user().search('aklotos').then(res => {
+    access.user().search({ q: 'aklotos', count: 1 }).then(res => {
       expect(res).toEqual(fixtures.user)
       done()
     })

@@ -2,6 +2,8 @@
 
 Javascript wrapper around [Instagram API](https://www.instagram.com/developer)
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Features
 
 * Promise based
@@ -17,12 +19,13 @@ npm i instagramjs
 
 All requests are made using an access token. See [Authentication](https://www.instagram.com/developer/authentication/) for a step-by-step guide on how to obtain a token.
 
-To quickly get a token for testing purposes, check out our [InstAuth](https://github.com/jean-moldovan/instauth) tool.
-
 ```javascript
 const Instagram = require('instagramjs')
 const access = new Instagram('access_token')
 ```
+
+Note: to quickly get a token for testing purposes, check out our [InstAuth](https://github.com/jean-moldovan/instauth) tool.
+
 
 ## Global config
 
@@ -53,7 +56,7 @@ access.user('id').media().get()
 access.user('self').media('liked').get({count: 20})
   .then(console.log) // GET /users/self/media/liked?count=20
 
-access.user().search('foo').then(console.log) // GET /users/search?q=foo
+access.user().search({q: 'foo'}).then(console.log) // GET /users/search?q=foo
 ```
 
 ### User Relationship
@@ -122,7 +125,7 @@ access.tag('name').get()
 access.tag('name').media().get()
   .then(console.log) // GET /tags/name/media/recent (recent is by default)
 
-access.tag().search('foo')
+access.tag().search({q: 'foo'})
   .then(console.log) // GET /tags/search?q=foo
 ```
 
@@ -166,7 +169,7 @@ If you need to specify request timeout:
 access.user('self').get(100) // request timeout 100ms
 ```
 
-Combination of above:
+And, finally, combination of above:
 
 ```javascript
 access.user('self').get({foo: 'bar'}, true, 100)
@@ -179,10 +182,10 @@ to build a custom request:
 
 ```javascript
 access.request({
-  url: '/users/search',
+  url: '/my/url',
   method: 'get',
   params: {
-    q: 'foo'
+    foo: 'bar'
   },
   fullResponse: false,
   timeout: 0
