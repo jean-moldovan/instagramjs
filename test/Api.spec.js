@@ -108,6 +108,23 @@ describe('Api', () => {
       })
     })
 
+    it('should handle \'Page not found\' errors', (done) => {
+      const api = new Api('token', { baseURL })
+
+      nock(baseURL)
+        .get('/users')
+        .query(true)
+        .reply(404, '<html></html>')
+
+      api.request({
+        url: '/users'
+      }).catch(err => {
+        expect(err.status).toBe(404)
+        expect(err.message).toBe('Resource not found')
+        done()
+      })
+    })
+
     it('should handle connection errors', (done) => {
       const api = new Api('token', { baseURL })
 
