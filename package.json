@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && jasmine --config=test/jasmine.json",
+    "test": "npm run lint && nyc jasmine --config=test/jasmine.json",
+    "coverage": "nyc report --reporter=text-lcov | codecov",
     "prepublish": "npm test"
   },
   "keywords": [
@@ -23,8 +24,10 @@
     "axios": "^0.16.2"
   },
   "devDependencies": {
+    "codecov": "^3.0.0",
     "jasmine": "^2.8.0",
     "nock": "^9.0.28",
+    "nyc": "^11.3.0",
     "standard": "^10.0.3"
   },
   "standard": {
