@@ -56,7 +56,8 @@ access.user('id').media().get()
 access.user('self').media('liked').get({count: 20})
   .then(console.log) // GET /users/self/media/liked?count=20
 
-access.user().search({q: 'foo'}).then(console.log) // GET /users/search?q=foo
+access.user().search({q: 'foo'})
+  .then(console.log) // GET /users/search?q=foo
 ```
 
 ### User Relationship
