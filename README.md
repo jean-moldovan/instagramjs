@@ -2,7 +2,7 @@
 
 Javascript wrapper around [Instagram API](https://www.instagram.com/developer)
 
-[![Build Status](https://travis-ci.org/jean-moldovan/instagramjs.svg?branch=master)](https://travis-ci.org/jean-moldovan/instagramjs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/jean-moldovan/instagramjs.svg?branch=master)](https://travis-ci.org/jean-moldovan/instagramjs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![codecov](https://codecov.io/gh/jean-moldovan/instagramjs/branch/master/graph/badge.svg)](https://codecov.io/gh/jean-moldovan/instagramjs)
 
 ## Features
 
