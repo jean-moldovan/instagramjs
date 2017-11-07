@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && jasmine --config=test/jasmine.json"
+    "test": "npm run lint && jasmine --config=test/jasmine.json",
+    "prepublish": "npm test"
   },
   "keywords": [
     "javascript",
