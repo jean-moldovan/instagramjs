@@ -8,6 +8,7 @@ Javascript wrapper around [Instagram API](https://www.instagram.com/developer)
 
 * Promise based
 * No browser support (sorry, can't get excited about JSONP)
+* [Tested](https://travis-ci.org/jean-moldovan/instagramjs) on NodeJS 6, 7, 8
 
 ## Install
 
