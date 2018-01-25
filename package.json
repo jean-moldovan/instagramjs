@@ -42,6 +42,9 @@
       "beforeEach",
       "fit",
       "xit"
+    ],
+    "ignore": [
+      "/dist/"
     ]
   }
 }
