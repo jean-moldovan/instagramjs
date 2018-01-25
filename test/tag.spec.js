@@ -1,5 +1,5 @@
 const nock = require('nock')
-const Instagram = require('../lib/Instagram')
+const Instagram = require('../src/lib/Instagram')
 const fixtures = require('./fixtures')
 
 describe('tag', () => {
