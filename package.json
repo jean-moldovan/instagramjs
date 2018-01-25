@@ -2,9 +2,10 @@
   "name": "instagramjs",
   "version": "1.0.1",
   "description": "Javascript wrapper around Instagram API",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "lint": "standard",
+    "build": "babel src -d dist --copy-files",
     "test": "npm run lint && nyc jasmine --config=test/jasmine.json",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "prepublish": "npm test"
@@ -24,6 +25,8 @@
     "axios": "^0.16.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "codecov": "^3.0.0",
     "jasmine": "^2.8.0",
     "nock": "^9.0.28",
@@ -39,6 +42,9 @@
       "beforeEach",
       "fit",
       "xit"
+    ],
+    "ignore": [
+      "/dist/"
     ]
   }
 }

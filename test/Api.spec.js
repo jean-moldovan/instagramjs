@@ -1,5 +1,5 @@
 const nock = require('nock')
-const Api = require('../lib/Api')
+const Api = require('../src/lib/Api')
 
 describe('Api', () => {
   const baseURL = 'https://foo.com'

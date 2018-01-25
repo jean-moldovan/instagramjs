@@ -1,5 +1,5 @@
-const Instagram = require('../lib/Instagram')
-const config = require('../lib/config')
+const Instagram = require('../src/lib/Instagram')
+const config = require('../src/lib/config')
 
 describe('Instagram', () => {
   describe('init', () => {
